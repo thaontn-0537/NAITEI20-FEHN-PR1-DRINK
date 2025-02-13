@@ -4,6 +4,7 @@ import BlogCard from "./components/BlogCard";
 import ProductCardSmall from "./components/product-card/ProductCardSmall";
 import product1 from "./assets/products/product1.jpg"
 import ProductCardLarge from "./components/product-card/ProductCardLarge";
+import Footer from "./components/Footer";
 
 function App() {
   const products = [
@@ -31,6 +32,7 @@ function App() {
         </div>
         <div class="triangle"></div>
       </main>
+      <Footer/>
     </>
   );
 }
