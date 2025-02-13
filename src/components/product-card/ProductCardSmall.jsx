@@ -28,7 +28,7 @@ const ProductCardSmall = ({ tag, image, name, price, oldPrice }) => {
       )}
 
       {/* Product Image */}
-      <div className="w-full h-60 flex justify-center items-center mt-2 overflow-hidden relative">
+      <div className="w-full h-60 flex justify-center items-center mt-2 overflow-hidden relative cursor-pointer">
         <img
           src={image}
           alt={name}
@@ -47,12 +47,12 @@ const ProductCardSmall = ({ tag, image, name, price, oldPrice }) => {
       </div>
 
       {/* Product Info */}
-      <div className="text-center mt-2">
-        <p className="text-sm font-medium text-gray-800 group-hover:text-yellow-600 transition-colors duration-300">
+      <div className="text-center mt-4">
+        <p className="text-sm font-medium text-gray-800 group-hover:text-yellow-500 transition-colors duration-300 cursor-pointer">
           {name}
         </p>
         <div className="mt-1">
-          <span className="text-lg text-yellow-600">
+          <span className="text-lg text-yellow-500">
             {price.toLocaleString()}đ
           </span>
           {oldPrice && (
