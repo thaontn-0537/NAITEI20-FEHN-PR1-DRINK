@@ -19,7 +19,7 @@ import { Button } from "./Button";
 const Footer = () => {
   return (
     <footer className="bg-white py-10 relative">
-      <div className="absolute left-0 top-110 w-full border-t border-gray-200"></div>
+      <div className="absolute left-0 bottom-20 w-full border-t border-gray-200"></div>
       <div className="container mx-auto px-50">
         {/* Logo Section */}
         <div>

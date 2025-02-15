@@ -5,6 +5,7 @@ import ProductCardSmall from "./components/product-card/ProductCardSmall";
 import product1 from "./assets/products/product1.jpg"
 import ProductCardLarge from "./components/product-card/ProductCardLarge";
 import Footer from "./components/Footer";
+import PopUp from "./components/PopUp";
 
 function App() {
   const products = [
@@ -19,6 +20,7 @@ function App() {
     <>
       <Header />
       <main className="flex min-h-screen flex-col items-center justify-center space-y-4 bg-white text-center">
+        <PopUp></PopUp>
         <Button>ADD TO CART</Button>
         <Button size="lg">ĐĂNG NHẬP</Button>
         <BlogCard />
