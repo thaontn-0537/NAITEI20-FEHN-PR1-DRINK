@@ -10,11 +10,11 @@ const tagColors = {
   Hot: "bg-red-500",
 };
 
-const ProductCardSmall = ({ tag, image, name, price, oldPrice }) => {
+const ProductCardSmall = ({ tag, image, name, price, oldPrice, displayTag = true }) => {
   return (
-    <div className="relative w-60 p-2 bg-white overflow-hidden group">
-      {tag && (
-        <div className="absolute top-0 left-0">
+    <div className="relative w-60 p-2 bg-white overflow-hidden group flex flex-col items-center">
+      {displayTag && tag && (
+        <div className="absolute top-0 left-0 z-10">
           <div className="relative w-20 h-20">
             <div
               className={`absolute w-0 h-0 border-l-[60px] border-t-[60px] border-solid border-transparent ${tagColors[tag]} border-t-white rotate-[90deg]`}
@@ -48,9 +48,12 @@ const ProductCardSmall = ({ tag, image, name, price, oldPrice }) => {
 
       {/* Product Info */}
       <div className="text-center mt-4">
-        <p className="text-sm font-medium text-gray-800 group-hover:text-yellow-500 transition-colors duration-300 cursor-pointer">
-          {name}
-        </p>
+      <p 
+        className="text-sm font-medium text-gray-800 group-hover:text-yellow-500 transition-none cursor-pointer uppercase overflow-hidden whitespace-nowrap text-ellipsis w-full text-left"
+        title={name}
+      >
+        {name}
+      </p>
         <div className="mt-1">
           <span className="text-lg text-yellow-500">
             {price.toLocaleString()}đ
