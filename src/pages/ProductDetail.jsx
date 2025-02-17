@@ -146,7 +146,7 @@ const ProductPage = () => {
           Trang chủ
         </Link>{" "}
         /
-        <Link to="/" className="text-gray-500 hover:text-black">
+        <Link to="/products" className="text-gray-500 hover:text-black">
           {" "}
           Sản phẩm
         </Link>{" "}
