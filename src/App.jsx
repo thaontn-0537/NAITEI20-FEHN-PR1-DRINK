@@ -3,12 +3,15 @@ import { Button } from "./components/Button";
 import BlogCard from "./components/BlogCard";
 import ProductCardSmall from "./components/product-card/ProductCardSmall";
 import product1 from "./assets/products/product1.jpg"
+import ProductCardLarge from "./components/product-card/ProductCardLarge";
 
 function App() {
   const products = [
-    { tag: "Sale", image: product1, name: "RƯỢU VANG ĐÀ LẠT", price: 370000, oldPrice: 450000 },
+    { tag: "Sale", image: product1, name: "RƯỢU VANG ĐÀ LẠT", price: 370000, oldPrice: 450000, 
+      description: "Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tuổi thọ. Resveratro còn có khả năng ngăn chặn mức độ oxy hóa của protein béo." },
     { tag: "Mới", image: product1, name: "RƯỢU VANG ĐÀ LẠT", price: 370000, oldPrice: 450000 },
     { tag: "Hot", image: product1, name: "RƯỢU VANG ĐÀ LẠT", price: 370000, oldPrice: 450000 },
+    { image: product1, name: "RƯỢU VANG ĐÀ LẠT", price: 370000, oldPrice: 450000 },
   ];
 
   return (
@@ -23,6 +26,9 @@ function App() {
             <ProductCardSmall key={index} {...product} />
           ))}
         </div>;
+        <div>
+          <ProductCardLarge {...products[0]} />
+        </div>
         <div class="triangle"></div>
       </main>
     </>
