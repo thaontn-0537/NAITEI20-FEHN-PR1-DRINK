@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import logo from "../assets/images/logo.png";
 import submenu from "../assets/images/submenu.jpg";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category) => {
+    navigate(`/products?category=${encodeURIComponent(category)}`);
+  };
+
   return (
     <header>
       <div className="border-b border-gray-200 bg-white text-gray-400">
@@ -70,12 +77,12 @@ const Header = () => {
           <nav className="h-28">
             <ul className="flex h-full space-x-8 text-xs">
               <li className="flex h-full items-center hover:text-yellow-500">
-                <a href="#" className="tracking-wider uppercase">
+                <a href="/" className="tracking-wider uppercase">
                   Trang chủ
                 </a>
               </li>
               <li className="group relative flex h-full items-center hover:text-yellow-500">
-                <a href="#" className="tracking-wider uppercase">
+                <a href="/products" className="tracking-wider uppercase">
                   Rượu vang đỏ
                 </a>
                 {/* Submenu with 5-column grid */}
@@ -84,23 +91,23 @@ const Header = () => {
                   <div>
                     <h3 className="mb-2 font-bold uppercase">Rượu ngoại</h3>
                     <ul className="space-y-2 text-gray-600">
-                      <li className="hover:text-yellow-500">
-                        <a href="#">Rượu Chivas</a>
+                      <li className="hover:text-yellow-500 cursor-pointer" onClick={() => handleCategoryClick("Rượu Chivas")}>
+                        Rượu Chivas
                       </li>
-                      <li className="hover:text-yellow-500">
-                        <a href="#">Hàng độc - Rượu độc đáo</a>
+                      <li className="hover:text-yellow-500 cursor-pointer" onClick={() => handleCategoryClick("Hàng độc - Rượu độc đáo")}>
+                        Hàng độc - Rượu độc đáo
                       </li>
-                      <li className="hover:text-yellow-500">
-                        <a href="#">Johnnie Walker</a>
+                      <li className="hover:text-yellow-500 cursor-pointer" onClick={() => handleCategoryClick("Johnnie Walker")}>
+                        Johnnie Walker
                       </li>
-                      <li className="hover:text-yellow-500">
-                        <a href="#">Rượu Whisky</a>
+                      <li className="hover:text-yellow-500 cursor-pointer" onClick={() => handleCategoryClick("Rượu Whisky")}>
+                        Rượu Whisky
                       </li>
-                      <li className="hover:text-yellow-500">
-                        <a href="#">Rượu Remy Martin</a>
+                      <li className="hover:text-yellow-500 cursor-pointer" onClick={() => handleCategoryClick("Rượu Remy Martin")}>
+                        Rượu Remy Martin
                       </li>
-                      <li className="hover:text-yellow-500">
-                        <a href="#">Rượu Glenmorangie</a>
+                      <li className="hover:text-yellow-500 cursor-pointer" onClick={() => handleCategoryClick("Rượu Glenmorangie")}>
+                        Rượu Glenmorangie
                       </li>
                     </ul>
                   </div>
