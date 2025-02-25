@@ -11,7 +11,7 @@ const Header = () => {
           <nav>
             <ul className="flex space-x-2 text-xs">
               <li>
-                <a href="#" className="hover:text-yellow-500 hover:underline">
+                <a href="/profile" className="hover:text-yellow-500 hover:underline">
                   Tài khoản của tôi
                 </a>
               </li>
@@ -29,7 +29,7 @@ const Header = () => {
               </li>
               <li className="text-gray-400">-</li>
               <li>
-                <a href="#" className="hover:text-yellow-500 hover:underline">
+                <a href="/cart" className="hover:text-yellow-500 hover:underline">
                   Giỏ hàng
                 </a>
               </li>
@@ -184,7 +184,7 @@ const Header = () => {
                 </a>
               </li>
               <li className="flex h-full items-center hover:text-yellow-500">
-                <a href="#" className="tracking-wider uppercase">
+                <a href="/contact" className="tracking-wider uppercase">
                   Liên hệ
                 </a>
               </li>

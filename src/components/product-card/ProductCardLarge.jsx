@@ -2,8 +2,14 @@ import React from "react";
 import { Button } from "../Button";
 import { FaHeart } from "react-icons/fa";
 import { SiGoogleanalytics } from "react-icons/si";
+import { useCart } from "../../context/CartContext.jsx"; 
 
-const ProductCardLarge = ({ image, name, price, description }) => {
+const ProductCardLarge = ({ id, image, name, price, description }) => {
+  const { addToCart } = useCart(); // Lấy hàm addToCart từ context
+
+  const handleAddToCart = () => {
+    addToCart({ id, name, image, price });
+  };
   return (
     <div className="flex w-160 p-4 gap-5 bg-white group">
       {/* Product Image */}
@@ -27,7 +33,7 @@ const ProductCardLarge = ({ image, name, price, description }) => {
         </div>
         {/* Button */}
         <div className="flex gap-5 items-center mt-5">
-          <Button>ADD TO CART</Button>
+          <Button onClick={handleAddToCart}>ADD TO CART</Button>
           <div className="flex items-center gap-2 cursor-pointer text-gray-500 hover:text-black">
             <FaHeart /> <span className="text-xs">Yêu thích</span>
           </div>

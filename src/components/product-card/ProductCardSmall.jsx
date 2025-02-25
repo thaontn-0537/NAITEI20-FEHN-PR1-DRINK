@@ -3,6 +3,7 @@ import { Button } from "../Button";
 import { FaHeart } from "react-icons/fa";
 import { SiGoogleanalytics } from "react-icons/si";
 import { BsArrowsAngleContract } from "react-icons/bs";
+import { useCart } from "../../context/CartContext.jsx"; 
 
 const tagColors = {
   Sale: "bg-yellow-500",
@@ -10,7 +11,12 @@ const tagColors = {
   Hot: "bg-red-500",
 };
 
-const ProductCardSmall = ({ tag, image, name, price, oldPrice, displayTag = true }) => {
+const ProductCardSmall = ({ id, tag, image, name, price, oldPrice, displayTag = true }) => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({ id, name, image, price });
+  };
   return (
     <div className="relative w-60 p-2 bg-white overflow-hidden group flex flex-col items-center">
       {displayTag && tag && (
@@ -66,7 +72,7 @@ const ProductCardSmall = ({ tag, image, name, price, oldPrice, displayTag = true
         </div>
       </div>
 
-      <Button className="mt-4">ADD TO CART</Button>
+      <Button className="mt-4" onClick={handleAddToCart}>ADD TO CART</Button>
     </div>
   );
 };
